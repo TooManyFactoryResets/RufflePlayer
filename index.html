@@ -9,6 +9,27 @@
     <div id="fPlayer"></div>
     <script>
     window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer.config = {
+      "polyfills": true,
+  
+      // Options affecting files only
+      "allowScriptAccess": true,
+      "unmuteOverlay": "visible",
+      "letterbox": "on",
+      "warnOnUnsupportedContent": true,
+      "contextMenu": "on",
+      "showSwfDownload": false,
+      "maxExecutionDuration": 99,
+      "logLevel": "error",
+      "menu": true,
+      "forceAlign": true,
+      "scale": "showAll",
+      "quality": "low",
+      "splashScreen": true,
+      "openUrlMode": "confirm",
+      "allowNetworking": "all",
+      "favorFlash": true
+    };
     window.addEventListener("DOMContentLoaded", () => {
       let ruffle = window.RufflePlayer.newest();
       let player = ruffle.createPlayer();
