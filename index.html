@@ -4,6 +4,14 @@
     <title>Ruffle Player</title>
   </head>
   <body>
+    <div id="fplayer"></div>
+    <script>
+      window.RufflePlayer = window.RufflePlayer || {};
+      window.onload(function (event) {
+        const ruffle = window.RufflePlayer.newest();
+      });
+      
+    </script>
     <script src="./ruffle.js"></script>
   </body>
 </html>
