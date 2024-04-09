@@ -14,11 +14,9 @@
       });
       var fplay = document.getElementById("fPlayer");
       var fileP = document.getElementById("filePicker");
-      fileP.addEventListener("change", function () {
+      fileP.addEventListener("change", function (event) {
           fplay.innerHTML = "";
           player = ruffle.createPlayer();
-          player.style.width = "100%";
-          player.style.height = "100%";
           fplay.appendChild(player);
           player.load(URL.createObjectURL(fileP.files[0]));
       });
