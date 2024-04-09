@@ -14,14 +14,13 @@
       });
       var fplay = document.getElementById("fPlayer");
       var fileP = document.getElementById("filePicker");
-      fileP.addEventListener("change", () => {
-        if (fileP.files.length == 1) {
+      fileP.addEventListener("change", function () {
           fplay.innerHTML = "";
           player = ruffle.createPlayer();
           player.style.width = "100vw";
           player.style.height = "100vh";
           fplay.appendChild(player);
-          player.load(fileP.files[0]);
+          player.load(URL.createObjectURL(fileP.files[0]));
         }
       });
     </script>
