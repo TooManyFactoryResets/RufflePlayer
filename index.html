@@ -17,8 +17,8 @@
       fileP.addEventListener("change", function () {
           fplay.innerHTML = "";
           player = ruffle.createPlayer();
-          player.style.width = "100vw";
-          player.style.height = "100vh";
+          player.style.width = "100%";
+          player.style.height = "100%";
           fplay.appendChild(player);
           player.load(URL.createObjectURL(fileP.files[0]));
         }
