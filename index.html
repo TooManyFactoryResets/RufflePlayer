@@ -20,7 +20,7 @@
           fplay.appendChild(player);
           player.load(URL.createObjectURL(fileP.files[0]));
       });
-      window.addEventListener("error", (event) => {
+      window.addEventListener("error", function (event) {
         window.alert(event);
       }
     </script>
