@@ -4,13 +4,26 @@
     <title>Ruffle Player</title>
   </head>
   <body>
-    <div id="fplayer"></div>
+    <input id="filePicker" type="file">
+    <div id="fPlayer"></div>
     <script>
+      var player;
       window.RufflePlayer = window.RufflePlayer || {};
       window.onload(function (event) {
         const ruffle = window.RufflePlayer.newest();
       });
-      
+      var fplay = document.getElementById("fPlayer");
+      var fileP = document.getElementById("filePicker");
+      fileP.addEventListener("change", () => {
+        if (fileP.files.length == 1) {
+          fplay.innerHTML = "";
+          player = ruffle.createPlayer();
+          player.style.width = "100vw";
+          player.style.height = "100vh";
+          fplay.appendChild(player);
+          player.load(fileP.files[0]);
+        }
+      });
     </script>
     <script src="./ruffle.js"></script>
   </body>
