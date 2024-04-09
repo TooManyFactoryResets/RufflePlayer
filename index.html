@@ -5,25 +5,18 @@
     <script src="./ruffle.js"></script>
   </head>
   <body>
-    <input id="filePicker" type="file">
     <div id="fPlayer"></div>
     <script>
-      window.RufflePlayer = window.RufflePlayer || {};
-      window.onload(function (event) {
-      });
-      var fplay = document.getElementById("fPlayer");
-      var fileP = document.getElementById("filePicker");
-      fileP.addEventListener("change", function (event) {
-        var ruffle = window.RufflePlayer.newest();
-        fplay.innerHTML = "";
-        var player = ruffle.createPlayer();
-        fplay.appendChild(player);
-        player.load(URL.createObjectURL(fileP.files[0]));
-      });
-      window.addEventListener("error", function (event) {
-        window.alert(event);
-        return true;
-      });
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.addEventListener("DOMContentLoaded", () => {
+      let ruffle = window.RufflePlayer.newest();
+      let player = ruffle.createPlayer();
+      let container = document.getElementById("fPlayer");
+      container.appendChild(player);
+      player.load("movie.swf");
+      player.style.width = "100vw";
+      player.style.height = "100vh";
+    });
     </script>
   </body>
 </html>
