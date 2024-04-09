@@ -21,8 +21,10 @@
           player.style.height = "100%";
           fplay.appendChild(player);
           player.load(URL.createObjectURL(fileP.files[0]));
-        }
       });
+      window.addEventListener("error", (event) => {
+        window.alert(event);
+      }
     </script>
     <script src="./ruffle.js"></script>
   </body>
